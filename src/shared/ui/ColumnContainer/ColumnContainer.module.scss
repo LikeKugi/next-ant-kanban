@@ -1,0 +1,9 @@
+.ColumnContainer {
+  flex-shrink: 0;
+  width: 284px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  background-color: var(--color-purple-50);
+}

@@ -1,0 +1,13 @@
+.KanbanAddColumn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 8px;
+
+  &__icon {
+    color: inherit;
+  }
+}
