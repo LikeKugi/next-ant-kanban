@@ -20,14 +20,22 @@ const KanbanTitle: FC<IKanbanTitleProps> = ({ title, deleteHandler, editHandler 
   return (
     <div className={styles.KanbanTitle}
          onClick={toggleEditable}>
-      {isEditable ? (<Input value={title}
-                            onChange={(e) => editHandler(e.target.value)}
-                            onKeyPress={(e) => setIsEditable(e.key !== 'Enter')}
-                            onBlur={() => setIsEditable(false)}/>) : <span>{title}</span>}
+      <div className={styles.KanbanTitle__content}>
+        {isEditable ? (<Input autoFocus
+                              value={title}
+                              onChange={(e) => editHandler(e.target.value)}
+                              onKeyPress={(e) => setIsEditable(e.key !== 'Enter')}
+                              onBlur={() => setIsEditable(false)}/>) : <span>{title}</span>}
 
+      </div>
       {deleteHandler && <Button type="text"
                                 onClick={deleteHandler}
-                                style={{ maxWidth: 'max-content', maxHeight: 'max-content', position: 'absolute' }}
+                                style={{
+                                  maxWidth: 'max-content',
+                                  maxHeight: 'max-content',
+                                  padding: 0,
+                                  display: 'flex',
+                                }}
                                 className={styles.KanbanTitle__btn}><MoreIcon/></Button>}
     </div>
   );

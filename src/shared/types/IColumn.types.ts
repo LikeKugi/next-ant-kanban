@@ -4,3 +4,9 @@ export interface IColumn {
   id: UniqueIdentifier,
   title: string,
 }
+
+export interface ITask {
+  id: UniqueIdentifier;
+  columnId: UniqueIdentifier;
+  content: string;
+}

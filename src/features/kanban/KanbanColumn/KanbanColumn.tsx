@@ -14,6 +14,7 @@ interface IKanbanColumnProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEle
   column: IColumn;
   deleteHandler?: (arg: UniqueIdentifier) => void;
   editHandler: (id: UniqueIdentifier, arg: string) => void;
+  createTaskHandler: (columnId: UniqueIdentifier) => void;
 }
 
 const KanbanColumn: FC<IKanbanColumnProps> = ({
@@ -22,6 +23,7 @@ const KanbanColumn: FC<IKanbanColumnProps> = ({
                                                 column,
                                                 deleteHandler,
                                                 editHandler,
+                                                createTaskHandler,
                                                 ...other
                                               }): JSX.Element => {
 
@@ -49,7 +51,7 @@ const KanbanColumn: FC<IKanbanColumnProps> = ({
       <KanbanTitle title={column.title}
                    deleteHandler={deleteHandler ? () => deleteHandler(column.id) : undefined}
                    editHandler={editTitle}/>
-      <KanbanAddTask/>
+      <KanbanAddTask onClick={() => createTaskHandler(column.id)}/>
       {children}
     </ColumnContainer>
   );

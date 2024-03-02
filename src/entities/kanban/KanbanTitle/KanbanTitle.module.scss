@@ -1,7 +1,9 @@
 .KanbanTitle {
-  position: relative;
   width: 100%;
   padding: 5px 8px;
+
+  display: flex;
+  align-items: center;
 
   border-radius: 10px 10px 0 0;
   background-color: var(--color-gray-50);
@@ -9,8 +11,11 @@
 
   text-align: center;
 
+  &__content {
+    flex-grow: 1;
+  }
+
   &__btn {
-    top: 0;
-    right: 0;
+    align-items: center;
   }
 }
